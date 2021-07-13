@@ -1,0 +1,28 @@
+CREATE TABLE public.produto
+(
+    codigo integer,
+    nome character varying(45) COLLATE pg_catalog."default",
+    descricao text COLLATE pg_catalog."default",
+    tamanho character(2) COLLATE pg_catalog."default",
+    preco double precision
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE public.produto
+    OWNER to postgres;
+
+
+CREATE TABLE public.usuario
+(
+    idusuario integer NOT NULL DEFAULT nextval('usuario_idusuario_seq'::regclass),
+    nome character varying(45) COLLATE pg_catalog."default" NOT NULL,
+    email character varying(45) COLLATE pg_catalog."default" NOT NULL,
+    senha character varying(45) COLLATE pg_catalog."default" NOT NULL,
+    telefone character varying(15) COLLATE pg_catalog."default" NOT NULL
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE public.usuario
+    OWNER to postgres;
